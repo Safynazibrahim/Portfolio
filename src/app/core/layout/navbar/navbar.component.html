@@ -1,0 +1,171 @@
+<nav
+  class="fixed bg-brand-light dark:bg-brand-dark top-0 left-0 w-full z-50 transition-colors duration-500 ease-out"
+  [ngClass]="{
+    'border-b border-brand-primary': !isMenuOpen,
+  }"
+>
+  <div class="container-page h-16 flex items-center justify-between">
+    <!-- LEFT: Brand / Name -->
+    <a routerLink="/" class="text-xl">
+      <span class="hidden sm:inline shadow-text-gradiant">Safynaz Ibrahim</span>
+      <span class="sm:hidden shadow-text-gradiant">S-I</span>
+    </a>
+
+    <!-- RIGHT: Navigation (desktop) -->
+    <div class="hidden md:flex items-center gap-8">
+      <a
+        routerLink="/"
+        fragment="home"
+        [class.text-brand-primary]="isActive('home')"
+        class="active-link"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/"
+        fragment="about"
+        [class.text-brand-primary]="isActive('about')"
+        class="active-link"
+      >
+        About
+      </a>
+
+      <a
+        routerLink="/"
+        fragment="skills"
+        [class.text-brand-primary]="isActive('skills')"
+        class="active-link"
+      >
+        Skills
+      </a>
+
+      <a
+        routerLink="/"
+        fragment="experience"
+        [class.text-brand-primary]="isActive('experience')"
+        class="active-link"
+      >
+        Experience
+      </a>
+
+      <a
+        routerLink="/"
+        fragment="projects"
+        [class.text-brand-primary]="isActive('projects')"
+        class="active-link"
+      >
+        Projects
+      </a>
+
+      <a
+        routerLink="/"
+        fragment="contact"
+        [class.text-brand-primary]="isActive('contact')"
+        class="active-link"
+      >
+        Contact
+      </a>
+
+      <!-- Theme toggle -->
+      <button
+        class="text-slate-600 text-lg"
+        (click)="_ThemeService.toggle()"
+        aria-label="Toggle theme"
+      >
+        <i
+          class="pi"
+          [ngClass]="_ThemeService.current === 'dark' ? 'pi-sun' : 'pi-moon'"
+        >
+        </i>
+      </button>
+    </div>
+
+    <!-- RIGHT: Mobile Icons -->
+    <div class="md:hidden flex items-center gap-3">
+      <!-- Theme -->
+      <button class="text-slate-600 text-lg" (click)="_ThemeService.toggle()">
+        <i
+          class="pi"
+          [ngClass]="_ThemeService.current === 'dark' ? 'pi-sun' : 'pi-moon'"
+        ></i>
+      </button>
+
+      <!-- Menu toggle -->
+      <button class="text-lg text-slate-600" (click)="toggleMenu()">
+        <i class="pi" [ngClass]="isMenuOpen ? 'pi-times' : 'pi-bars'"></i>
+      </button>
+    </div>
+  </div>
+  <!-- MOBILE MENU -->
+  <div
+    *ngIf="isMenuOpen"
+    class="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-sm px-6 py-6 space-y-4 glass-surface"
+  >
+    <a
+      routerLink="/"
+      fragment="home"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('home')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-home text-brand-primary"></i>
+      <span>Home</span>
+    </a>
+
+    <a
+      routerLink="/"
+      fragment="about"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('about')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-user text-brand-primary"></i>
+      <span>About</span>
+    </a>
+
+    <a
+      routerLink="/"
+      fragment="skills"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('skills')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-star text-brand-primary"></i>
+      <span>Skills</span>
+    </a>
+
+    <a
+      routerLink="/"
+      fragment="experience"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('experience')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-briefcase text-brand-primary"></i>
+      <span>Experience</span>
+    </a>
+
+    <a
+      routerLink="/"
+      fragment="projects"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('projects')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-folder text-brand-primary"></i>
+      <span>Projects</span>
+    </a>
+
+    <a
+      routerLink="/"
+      fragment="contact"
+      (click)="closeMenu()"
+      [class.text-brand-primary]="isActive('contact')"
+      class="flex items-center gap-3"
+    >
+      <i class="pi pi-envelope text-brand-primary"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>

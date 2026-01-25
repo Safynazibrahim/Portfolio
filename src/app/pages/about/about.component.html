@@ -1,0 +1,81 @@
+<div #aboutRoot class="container-page space-y-10 max-w-6xl">
+  <!-- TITLE -->
+  <div class="text-center mx-auto space-y-2">
+    <span class="text-3xl font-extrabold leading-tight title-gradient">
+      About Me
+    </span>
+    <p class="font-semibold text-slate-600">
+      Frontend developer passionate about building clean, scalable, and
+      user-friendly web interfaces.
+    </p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <!-- LEFT: STORY -->
+    <div [@fromLeft]="leftState" class="glass-surface p-8 space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="btn-primary p-3">
+          <i class="pi pi-user"></i>
+        </span>
+        <h3 class="text-xl font-bold">My Journey</h3>
+      </div>
+      <p class="text-slate-600 font-semibold leading-relaxed">
+        I’m a Front-End Developer based in Cairo. I specialize in building
+        responsive and modern web applications using Angular, TypeScript, and
+        Tailwind CSS.
+      </p>
+
+      <p class="text-slate-600 font-semibold leading-relaxed">
+        I’ve worked on academic, freelance, and real-world projects where I
+        translated Figma designs into clean UI, integrated APIs, and followed
+        component-based architecture and best practices.
+      </p>
+    </div>
+
+    <!-- RIGHT: STATS -->
+    <div  class="grid grid-cols-2 gap-6">
+      <div [@fromBottom]="bottomState" class="glass-surface flex flex-col items-center p-5 space-y-2">
+        <span class="btn-primary p-3">
+          <i class="pi pi-briefcase"></i>
+        </span>
+        <h4 class="text-2xl font-bold text-brand-primary shadow-text-gradiant">
+          1+
+        </h4>
+        <p class="text-slate-700 font-semibold text-sm">Years Of Experience</p>
+      </div>
+
+      <div [@fromBottom]="bottomState" class="glass-surface flex flex-col items-center p-5 space-y-2">
+        <span class="btn-primary p-3">
+          <i class="pi pi-folder"></i>
+        </span>
+        <h4 class="text-2xl font-bold text-brand-primary shadow-text-gradiant">
+          10+
+        </h4>
+        <p class="text-slate-700 font-semibold text-sm">Projects</p>
+      </div>
+
+      <!-- ACHIEVEMENT (FULL WIDTH) -->
+      <div [@fromRight]="rightState"
+        class="glass-surface col-span-2 p-5 flex flex-col items-start space-y-2"
+      >
+        <div class="flex items-center gap-2">
+          <!-- Icon -->
+          <span class="bg-[#fe8600] text-white px-3.5 py-2.5 rounded-xl">
+            <i class="pi pi-trophy"></i>
+          </span>
+          <h4 class="font-bold text-lg mb-1">Achievement Unlocked</h4>
+        </div>
+
+        <!-- Content -->
+        <div>
+          <p class="text-slate-600 font-semibold leading-relaxed">
+            Successfully delivered multiple real-world projects, translating
+            Figma designs into scalable Angular applications with clean UI and
+            reusable components.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
