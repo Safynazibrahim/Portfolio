@@ -1,1 +1,103 @@
-<p>projects works!</p>
+<div #projectsRoot class="container-page space-y-9 py-10 my-8">
+  <!-- TITLE -->
+  <div class="text-center mx-auto space-y-2">
+    <span class="text-3xl font-extrabold leading-tight title-gradient">
+      Projects
+    </span>
+    <p class="font-semibold text-slate-600">
+      A collection of projects showcasing my frontend development journey
+    </p>
+  </div>
+  <div class="flex justify-center gap-3 flex-wrap">
+    <button
+      *ngFor="let filter of filters"
+      [ngClass]="{
+        'filter-active': activeFilter === filter.value,
+      }"
+      (click)="activeFilter = filter.value"
+      class="px-4 py-1.5 glass-surface rounded-xl font-semibold text-sm transition duration-300 ease-out hover:-translate-y-1"
+    >
+      {{ filter.label }}
+    </button>
+  </div>
+  <!-- DESCRIPTION -->
+  <p class="text-center text-slate-600 font-medium max-w-2xl mx-auto">
+    {{ filterDescriptions[activeFilter] }}
+  </p>
+  <div [@fromBottom]="bottomState" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      *ngFor="let project of visibleProjects"
+      class="glass-surface rounded-xl overflow-hidden group"
+    >
+      <!-- Image -->
+      <div class="relative">
+        <img
+          [src]="project.image"
+          [alt]="project.title"
+          class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+        />
+
+        <!-- Badge -->
+        <span
+          class="absolute top-3 left-3 px-3 py-1.5 text-xs font-semibold rounded-[8px] bg-brand-primary text-brand-light"
+        >
+          {{ project.type | uppercase }}
+        </span>
+      </div>
+
+      <!-- Content -->
+      <div class="p-5 space-y-3">
+        <h3 class="font-bold text-lg">{{ project.title }}</h3>
+
+        <p class="text-sm font-semibold text-slate-700">
+          {{ project.description }}
+        </p>
+
+        <!-- Tech Pills -->
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let tech of project.tech" class="skill-pill">
+            {{ tech }}
+          </span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-3 pt-3">
+          <!-- Code -->
+          <a
+            [href]="project.github"
+            target="_blank"
+            class="btn-secondary flex-1 flex items-center justify-center gap-2"
+          >
+            <i class="pi pi-github"></i>
+            <span>Code</span>
+          </a>
+
+          <!-- Demo -->
+          <a
+            *ngIf="project.demo"
+            [href]="project.demo"
+            target="_blank"
+            class="btn-primary flex-1 flex items-center justify-center gap-2"
+          >
+            <i class="pi pi-external-link"></i>
+            <span>Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="filteredProjects.length > visibleCount"
+    class="flex justify-center"
+  >
+    <button
+      (click)="showAll = !showAll"
+      class="flex items-center gap-2 shadow-text-gradiant hover:-translate-y-1 transition"
+    >
+      <span>
+        {{ showAll ? "Show less" : "Show more" }}
+      </span>
+      <i class="pi" [ngClass]="showAll ? 'pi-angle-up' : 'pi-angle-down'"></i>
+    </button>
+  </div>
+</div>

@@ -49,17 +49,19 @@ html {
   /* Main button */
   .btn-primary {
     @apply inline-flex items-center justify-center
-           rounded-lg px-5 py-2 font-medium
+           rounded-lg px-5 py-1.5 font-medium
            bg-brand-primary text-white
-           transition hover:opacity-90;
+           transition duration-300 ease-out
+           hover:-translate-y-1;
   }
 
   /* Secondary button */
   .btn-secondary {
     @apply inline-flex items-center justify-center
-           border border-transparent dark:border-brand-primary rounded-lg px-5 py-2 font-medium
+           border border-transparent dark:border-brand-primary rounded-lg px-5 py-1.5 font-medium
            bg-brand-secondary text-white
-           transition hover:opacity-90;
+           transition duration-300 ease-out
+           hover:-translate-y-1;
   }
 
   /* Main title gradient */
