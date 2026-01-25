@@ -5,6 +5,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {
@@ -49,17 +54,19 @@ html {
   /* Main button */
   .btn-primary {
     @apply inline-flex items-center justify-center
-           rounded-lg px-5 py-2 font-medium
+           rounded-lg px-5 py-1.5 font-medium
            bg-brand-primary text-white
-           transition hover:opacity-90;
+           transition duration-300 ease-out
+           hover:-translate-y-1;
   }
 
   /* Secondary button */
   .btn-secondary {
     @apply inline-flex items-center justify-center
-           border border-transparent dark:border-brand-primary rounded-lg px-5 py-2 font-medium
+           border border-transparent dark:border-brand-primary rounded-lg px-5 py-1.5 font-medium
            bg-brand-secondary text-white
-           transition hover:opacity-90;
+           transition duration-300 ease-out
+           hover:-translate-y-1;
   }
 
   /* Main title gradient */
@@ -115,5 +122,119 @@ html {
     @apply px-3 py-1 text-sm font-semibold rounded-full
          bg-brand-primary/10 text-brand-primary
          border border-brand-primary/30;
+  }
+
+  /* ACTIVE STATE */
+  .shadow-active {
+    @apply shadow-[0_0_25px_rgba(126,84,222,0.6)];
+  }
+}
+
+/* ===== PRIME TOAST CUSTOM STYLE ===== */
+/* Responsive styles for PrimeNG Toast Messages */
+.p-toast {
+  width: auto !important;
+  max-width: 90vw !important;
+}
+
+.p-toast-message {
+  margin: 10px !important;
+  word-break: break-word;
+  border-radius: 6px !important;
+  padding: 1rem !important;
+}
+
+/* Fix for error message styling to match the design */
+.p-toast-message-content {
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  padding: 0 !important;
+}
+
+.p-toast-message-icon {
+  margin-right: 10px !important;
+}
+
+.p-toast-message-text {
+  display: flex !important;
+  flex-direction: column !important;
+  padding-left: 0 !important;
+}
+
+.p-toast-summary {
+  font-weight: 600 !important;
+  margin-bottom: 5px !important;
+}
+
+.p-toast-detail {
+  color: #495057 !important;
+}
+
+/* Specifically style success messages */
+.p-toast-message-success {
+  background-color: #e8f5e9 !important;   
+  border: 1px solid #c8e6c9 !important;   
+  border-left: 4px solid #43a047 !important; 
+
+/* Specifically style error messages */
+.p-toast-message-error {
+  background: #ffebee !important;
+  border: 1px solid #ffcdd2 !important;
+  border-left: 4px solid #e53935 !important;
+}
+
+/* Fix for close button positioning */
+.p-toast-icon-close {
+  position: absolute !important;
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  z-index: 5 !important;
+  color: #757575 !important;
+}
+
+/* Style for layout of icon and text */
+.p-toast .p-toast-message .p-toast-message-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+/* Small screens */
+@media screen and (max-width: 576px) {
+  .p-toast {
+    width: 100% !important;
+    max-width: 100% !important;
+    right: 0 !important;
+    top: 5px !important;
+  }
+
+  .p-toast-message {
+    margin: 0 5px 10px !important;
+  }
+
+  .p-toast-message-content {
+    padding-right: 1.5rem !important;
+  }
+
+  .p-toast-detail {
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+
+  .p-toast-icon-close {
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+}
+
+/* Medium screens */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .p-toast {
+    max-width: 80vw !important;
+  }
+
+  .p-toast-message-content {
+    padding-right: 2rem !important;
   }
 }

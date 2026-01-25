@@ -24,16 +24,10 @@ import {
       state('visible', style({ opacity: 1, transform: 'translateX(0)' })),
       transition('hidden => visible', animate('900ms ease-out')),
     ]),
-
-    trigger('fromBottom', [
-      state('hidden', style({ opacity: 0, transform: 'translateY(40px)' })),
-      state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
-      transition('hidden => visible', animate('900ms ease-out')),
-    ]),
   ],
   styleUrl: './experience.component.css',
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements AfterViewInit{
   leftState1: 'hidden' | 'visible' = 'hidden';
   rightState1: 'hidden' | 'visible' = 'hidden';
   leftState2: 'hidden' | 'visible' = 'hidden';

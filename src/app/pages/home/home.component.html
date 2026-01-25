@@ -33,14 +33,18 @@
         class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
       >
         <a
-          href="../../../assets/Safynaz Ibrahim,CV.pdf"
+          href="assets/safynaz-ibrahim-cv.pdf"
           download
           class="btn-primary"
         >
           Download CV
         </a>
 
-        <a routerLink="/projects" class="btn-secondary cursor-pointer">
+        <a
+          routerLink="/"
+          fragment="projects"
+          class="btn-secondary cursor-pointer"
+        >
           View My Work
         </a>
       </div>
@@ -82,14 +86,14 @@
       class="relative flex justify-center order-1 md:order-2"
     >
       <!-- Image -->
-      <div class=" rounded-full overflow-hidden">
+      <div
+        class="rounded-full overflow-hidden border-[5px] border-brand-primary"
+      >
         <img
           src="../../../assets/photo_2026-01-24_21-20-15.jpg"
           alt="Safynaz Ibrahim"
-          class="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80
-         rounded-full object-cover transition-transform duration-500 ease-out hover:scale-110 hover:brightness-105"
+          class="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover transition-transform duration-500 ease-out hover:scale-110 hover:brightness-105"
         />
-
         <!-- Availability Badge -->
         <div
           class="absolute bottom-0 left-1/2 -translate-x-1/2 glass-surface p-2 w-[150px] text-sm flex justify-center items-center gap-1"
