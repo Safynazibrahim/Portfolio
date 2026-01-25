@@ -2,3 +2,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --nav-height: 4rem; /* 64px */
+}
+
+.section-screen {
+  min-height: calc(100vh - var(--nav-height));
+  scroll-margin-top: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+.section-screen > * {
+  width: 100%;
+}
+
+@media (max-width: 450px) {
+  .section-screen {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 1rem);
+    padding-bottom: 2rem;
+  }
+}
+@supports not (height: 100svh) {
+  .section-screen {
+    height: calc(100vh - var(--nav-height));
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-slate-900;
+  }
+
+  .dark body {
+    @apply bg-brand-dark text-slate-100;
+  }
+}
+
+@layer components {
+  /* Main button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           rounded-lg px-5 py-2 font-medium
+           bg-brand-primary text-white
+           transition hover:opacity-90;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+           border border-transparent dark:border-brand-primary rounded-lg px-5 py-2 font-medium
+           bg-brand-secondary text-white
+           transition hover:opacity-90;
+  }
+
+  /* Main title gradient */
+  .title-gradient {
+    @apply bg-title-gradient bg-clip-text text-transparent;
+  }
+
+  /* container */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* designs */
+  .shadow-text-gradiant {
+    @apply font-extrabold tracking-wide
+         bg-title-gradient bg-clip-text text-transparent
+         relative w-fit;
+  }
+
+  .shadow-text-gradiant::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #815ff5, #6965f2, #4c74fc);
+    filter: blur(18px);
+    opacity: 0.45;
+    z-index: -1;
+  }
+
+  .active-link {
+    @apply text-lg font-bold text-slate-600
+         transition hover:text-brand-primary;
+  }
+
+  /* ===== Glass Base ===== */
+  .glass-surface {
+    @apply rounded-2xl border-2 shadow-xl backdrop-blur-lg;
+  }
+
+  /* ===== Light Mode Glass ===== */
+  .glass-surface {
+    background-color: rgb(240 240 240 / 0.75); /* brand.light */
+    border-color: rgb(126 84 222 / 0.4);
+  }
+
+  /* ===== Dark Mode Glass ===== */
+  .dark .glass-surface {
+    background-color: rgb(17 12 23 / 0.75); /* brand.dark */
+    border-color: rgb(126 84 222 / 0.25); /* brand.primary */
+  }
+
+  .skill-pill {
+    @apply px-3 py-1 text-sm font-semibold rounded-full
+         bg-brand-primary/10 text-brand-primary
+         border border-brand-primary/30;
+  }
+}

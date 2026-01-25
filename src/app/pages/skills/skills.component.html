@@ -1,0 +1,80 @@
+<div #skillsRoot class="container-page py-10 my-8 space-y-6">
+  <!-- TITLE -->
+  <div class="text-center mx-auto space-y-2">
+    <span class="text-3xl font-extrabold title-gradient"> Skills </span>
+    <p class="font-semibold text-slate-600">
+      Technologies and tools I use to build modern, scalable web applications.
+    </p>
+  </div>
+
+  <!-- SKILLS GRID -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- CARD -->
+    <div [@fromLeft]="leftState1" class="glass-surface p-6 space-y-4">
+      <div class="flex items-center gap-2">
+        <i class="pi pi-code text-brand-primary"></i>
+        <h3 class="font-bold text-lg">Programming Languages</h3>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-pill">C++</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">TypeScript</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div [@fromRight]="rightState1" class="glass-surface p-6 space-y-4">
+      <div class="flex items-center gap-2">
+        <i class="pi pi-desktop text-brand-primary"></i>
+        <h3 class="font-bold text-lg">Frontend Core</h3>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-pill">HTML</span>
+        <span class="skill-pill">CSS</span>
+        <span class="skill-pill">Scss</span>
+        <span class="skill-pill">Bootstrap</span>
+        <span class="skill-pill">Tailwind Css</span>
+        <span class="skill-pill">Angular(14+)</span>
+        <span class="skill-pill">PrimeNG</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div [@fromLeft]="leftState2" class="glass-surface p-6 space-y-4">
+      <div class="flex items-center gap-2">
+        <i class="pi pi-sitemap text-brand-primary"></i>
+        <h3 class="font-bold text-lg">Architecture</h3>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-pill">Standalone Components</span>
+        <span class="skill-pill">Routing</span>
+        <span class="skill-pill">Dependency Injection (DI)</span>
+        <span class="skill-pill">Services</span>
+        <span class="skill-pill">Guards</span>
+        <span class="skill-pill">Interceptors</span>
+        <span class="skill-pill">Pipe</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div [@fromRight]="rightState2" class="glass-surface p-6 space-y-4">
+      <div class="flex items-center gap-2">
+        <i class="pi pi-cog text-brand-primary"></i>
+        <h3 class="font-bold text-lg">Tools & Workflow</h3>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">GitHub</span>
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">Postman</span>
+        <span class="skill-pill">Swagger</span>
+        <span class="skill-pill">DevTools</span>
+      </div>
+    </div>
+  </div>
+</div>
