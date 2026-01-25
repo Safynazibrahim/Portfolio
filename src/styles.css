@@ -130,7 +130,22 @@ body {
   }
 }
 
-/* ===== PRIME TOAST CUSTOM STYLE ===== */
+/* ===== CHROME AUTOFILL FIX FOR INPUT ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill {
+  -webkit-text-fill-color: #e5e7eb !important;
+}
+
 /* Responsive styles for PrimeNG Toast Messages */
 .p-toast {
   width: auto !important;
@@ -173,10 +188,10 @@ body {
 
 /* Specifically style success messages */
 .p-toast-message-success {
-  background-color: #e8f5e9 !important;   
-  border: 1px solid #c8e6c9 !important;   
-  border-left: 4px solid #43a047 !important; 
-
+  background-color: #e8f5e9 !important;
+  border: 1px solid #c8e6c9 !important;
+  border-left: 4px solid #43a047 !important;
+}
 /* Specifically style error messages */
 .p-toast-message-error {
   background: #ffebee !important;
