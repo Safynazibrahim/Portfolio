@@ -1,6 +1,0 @@
-/* ACTIVE STATE */
-.filter-active {
-  @apply
-         shadow-[0_0_25px_rgba(126,84,222,0.6)]
-         ;
-}

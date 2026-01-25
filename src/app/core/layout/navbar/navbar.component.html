@@ -100,7 +100,9 @@
   <!-- MOBILE MENU -->
   <div
     *ngIf="isMenuOpen"
-    class="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-sm px-6 py-6 space-y-4 glass-surface"
+    class="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2
+         w-[calc(100%-1rem)] max-w-sm mx-auto px-4 py-6 space-y-3
+         glass-surface"
   >
     <a
       routerLink="/"

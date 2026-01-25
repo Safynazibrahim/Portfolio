@@ -1,1 +1,126 @@
-<p>contact works!</p>
+<div #contactRoot class="container-page space-y-10 max-w-6xl">
+  <!-- TITLE -->
+  <div class="text-center mx-auto space-y-2">
+    <span class="text-3xl font-extrabold leading-tight title-gradient">
+      Contact Me
+    </span>
+    <p class="font-semibold text-slate-600">
+      Let’s talk about any opportunity. I’m always open to meaningful
+      conversations.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+    <!-- SEND MESSAGE -->
+    <div [@fromLeft]="leftState"
+      class="lg:col-span-2 glass-surface p-6 sm:p-8 space-y-6 transition hover:-translate-y-1"
+    >
+      <div class="flex items-center gap-2">
+        <span class="btn-primary p-3">
+          <i class="pi pi-send"></i>
+        </span>
+        <h3 class="text-xl font-bold">Send Message</h3>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold mb-1">Name</label>
+          <input
+            type="text"
+            placeholder="Your name"
+            class="w-full rounded-lg bg-transparent border border-brand-primary/30 px-4 py-2 focus:outline-none focus:border-brand-primary"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1">Email</label>
+          <input
+            type="email"
+            placeholder="your.email@example.com"
+            class="w-full rounded-lg bg-transparent border border-brand-primary/30 px-4 py-2 focus:outline-none focus:border-brand-primary"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Subject</label>
+        <input
+          type="text"
+          placeholder="Project discussion, collaboration, or consultation"
+          class="w-full rounded-lg bg-transparent border border-brand-primary/30 px-4 py-2 focus:outline-none focus:border-brand-primary"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Message</label>
+        <textarea
+          rows="4"
+          placeholder="Tell me about your project or how we can work together..."
+          class="w-full rounded-lg bg-transparent border border-brand-primary/30 px-4 py-2 focus:outline-none focus:border-brand-primary resize-none"
+        ></textarea>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          class="btn-secondary shadow-active flex items-center gap-2 w-fit"
+        >
+          <i class="pi pi-send"></i>
+          Send Message
+        </button>
+      </div>
+    </div>
+    <!-- CONTACT INFO -->
+    <div [@fromRight]="rightState"
+      class="glass-surface p-4 sm:p-8 space-y-6 transition hover:-translate-y-1"
+    >
+      <h3 class="text-xl font-bold">Contact Information</h3>
+
+      <div
+        class="group flex items-center gap-4 glass-surface py-3 px-4 transition hover:translate-y-1"
+      >
+        <div class="btn-primary p-3">
+          <i class="pi pi-envelope"></i>
+        </div>
+        <div>
+          <p
+            class="font-semibold transition-colors group-hover:text-brand-primary"
+          >
+            Email
+          </p>
+          <p class="text-sm text-slate-600">safynazibrahim4gmail.com</p>
+        </div>
+      </div>
+
+      <div
+        class="group flex items-center gap-4 glass-surface py-3 px-4 transition hover:translate-y-1"
+      >
+        <div class="btn-primary p-3">
+          <i class="pi pi-mobile"></i>
+        </div>
+        <div>
+          <p
+            class="font-semibold transition-colors group-hover:text-brand-primary"
+          >
+            Phone
+          </p>
+          <p class="text-sm text-slate-600">+201150093207</p>
+        </div>
+      </div>
+
+      <div
+        class="group flex items-center gap-4 glass-surface py-3 px-4 transition hover:translate-y-1"
+      >
+        <div class="btn-primary p-3">
+          <i class="pi pi-map-marker"></i>
+        </div>
+        <div>
+          <p
+            class="font-semibold transition-colors group-hover:text-brand-primary"
+          >
+            Location
+          </p>
+          <p class="text-sm text-slate-600">Remote · Egypt-Cairo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

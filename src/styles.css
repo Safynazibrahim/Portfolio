@@ -5,6 +5,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {
@@ -117,5 +122,10 @@ html {
     @apply px-3 py-1 text-sm font-semibold rounded-full
          bg-brand-primary/10 text-brand-primary
          border border-brand-primary/30;
+  }
+
+  /* ACTIVE STATE */
+  .shadow-active {
+    @apply shadow-[0_0_25px_rgba(126,84,222,0.6)];
   }
 }

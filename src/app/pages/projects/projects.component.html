@@ -12,7 +12,7 @@
     <button
       *ngFor="let filter of filters"
       [ngClass]="{
-        'filter-active': activeFilter === filter.value,
+        'shadow-active': activeFilter === filter.value,
       }"
       (click)="activeFilter = filter.value"
       class="px-4 py-1.5 glass-surface rounded-xl font-semibold text-sm transition duration-300 ease-out hover:-translate-y-1"
