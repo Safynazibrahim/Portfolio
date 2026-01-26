@@ -165,6 +165,7 @@ textarea:-webkit-autofill:focus {
   flex-direction: column !important;
   position: relative !important;
   padding: 0 !important;
+  color: #495057 !important;
 }
 
 .p-toast-message-icon {
