@@ -25,11 +25,13 @@ import {
   ],
   styleUrl: './skills.component.css',
 })
-export class SkillsComponent implements AfterViewInit{
+export class SkillsComponent implements AfterViewInit {
   leftState1: 'hidden' | 'visible' = 'hidden';
   leftState2: 'hidden' | 'visible' = 'hidden';
+  leftState3: 'hidden' | 'visible' = 'hidden';
   rightState1: 'hidden' | 'visible' = 'hidden';
   rightState2: 'hidden' | 'visible' = 'hidden';
+  rightState3: 'hidden' | 'visible' = 'hidden';
 
   @ViewChild('skillsRoot', { static: true }) skillsRoot!: ElementRef;
 
@@ -47,6 +49,12 @@ export class SkillsComponent implements AfterViewInit{
           setTimeout(() => {
             this.rightState2 = 'visible';
           }, 1300);
+          setTimeout(() => {
+            this.leftState3 = 'visible';
+          }, 1700);
+          setTimeout(() => {
+            this.rightState3 = 'visible';
+          }, 2100);
 
           observer.disconnect();
         }

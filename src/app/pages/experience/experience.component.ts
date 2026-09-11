@@ -27,10 +27,11 @@ import {
   ],
   styleUrl: './experience.component.css',
 })
-export class ExperienceComponent implements AfterViewInit{
+export class ExperienceComponent implements AfterViewInit {
   leftState1: 'hidden' | 'visible' = 'hidden';
   rightState1: 'hidden' | 'visible' = 'hidden';
   leftState2: 'hidden' | 'visible' = 'hidden';
+  rightState2: 'hidden' | 'visible' = 'hidden';
 
   @ViewChild('experienceRoot', { static: true }) experienceRoot!: ElementRef;
 
@@ -45,6 +46,9 @@ export class ExperienceComponent implements AfterViewInit{
           setTimeout(() => {
             this.leftState2 = 'visible';
           }, 900);
+          setTimeout(() => {
+            this.rightState2 = 'visible';
+          }, 1300);
 
           observer.disconnect();
         }
