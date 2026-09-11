@@ -5,7 +5,8 @@
       Projects
     </span>
     <p class="font-semibold text-slate-600">
-      A collection of projects showcasing my frontend development journey
+      A collection of projects showcasing my QA testing and frontend development
+      journey
     </p>
   </div>
   <div class="flex justify-center gap-3 flex-wrap">
@@ -24,7 +25,10 @@
   <p class="text-center text-slate-600 font-medium max-w-2xl mx-auto">
     {{ filterDescriptions[activeFilter] }}
   </p>
-  <div [@fromBottom]="bottomState" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div
+    [@fromBottom]="bottomState"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
     <div
       *ngFor="let project of visibleProjects"
       class="glass-surface rounded-xl overflow-hidden group"
@@ -61,28 +65,40 @@
         </div>
 
         <!-- Buttons -->
-        <div class="flex gap-3 pt-3">
-          <!-- Code -->
-          <a
-            [href]="project.github"
-            target="_blank"
-            class="btn-secondary flex-1 flex items-center justify-center gap-2"
-          >
-            <i class="pi pi-github"></i>
-            <span>Code</span>
-          </a>
+        <!-- Buttons -->
+<div class="flex gap-3 pt-3">
+  <!-- GitHub -->
+  <a
+    [href]="project.github"
+    target="_blank"
+    class="btn-secondary flex-1 flex items-center justify-center gap-2"
+  >
+    <i class="pi pi-github"></i>
+    <span>GitHub</span>
+  </a>
 
-          <!-- Demo -->
-          <a
-            *ngIf="project.demo"
-            [href]="project.demo"
-            target="_blank"
-            class="btn-primary flex-1 flex items-center justify-center gap-2"
-          >
-            <i class="pi pi-external-link"></i>
-            <span>Demo</span>
-          </a>
-        </div>
+  <!-- Demo -->
+  <a
+    *ngIf="project.demo"
+    [href]="project.demo"
+    target="_blank"
+    class="btn-primary flex-1 flex items-center justify-center gap-2"
+  >
+    <i class="pi pi-external-link"></i>
+    <span>Demo</span>
+  </a>
+
+  <!-- Postman Collection -->
+  <a
+    *ngIf="project.collection"
+    [href]="project.collection"
+    target="_blank"
+    class="btn-primary flex-1 flex items-center justify-center gap-2"
+  >
+    <i class="pi pi-send"></i>
+    <span>Collection</span>
+  </a>
+</div>
       </div>
     </div>
   </div>

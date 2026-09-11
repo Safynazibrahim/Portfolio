@@ -85,7 +85,7 @@ import { ContactComponent } from '../contact/contact.component';
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
-  fullText = 'Frontend Developer';
+  fullText = 'Software Tester | QA Engineer';
   displayedText = '';
   private index = 0;
   private typingInterval: any;
